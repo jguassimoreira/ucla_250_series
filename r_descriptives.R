@@ -38,8 +38,8 @@ sd(d$income) #calculate the standard deviation
 popVar = function(x) {
   
   #A function that returns the population variance (i.e., n, not n-1, on the denominator)
-  smsq = var(y) * (length(y) - 1)  
-  pVar = smsq / length(y)
+  smsq = var(x) * (length(x) - 1)  
+  pVar = smsq / length(x)
   
   return(pVar)
   
@@ -57,6 +57,6 @@ range(d$income)[1] #get lowest value, use [2] for highest value
 #min() and max() will give you these two values as well, respectively
 
 #Let's calculate cell and marginal means with aggregate
-aggregate(d[,c("DV", "income")], by = list(d$Sex), FUN=mean)
+aggregate(d[,c("DV", "income")], by = list(d$Sex), FUN=mean) #you can use a custom function in FUN, e.g., try w popVar from above
 
 aggregate(d[,c("DV", "income")], by = list(d$Sex, d$Cond), FUN=mean)
