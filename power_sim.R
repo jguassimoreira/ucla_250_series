@@ -14,7 +14,7 @@
 #null population mean - average IQ score is 100
 muH0=100
 #alternative population mean - average IQ score is 110
-muH1=110
+muH1=105
 #population SD - 10
 sigmaPop=10
 #critical value for one-tailed test - from qnorm()
