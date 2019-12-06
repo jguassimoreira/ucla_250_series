@@ -94,7 +94,7 @@ IV_fan_affil <- c(rep("LAD", 5), rep("LAA", 5), rep("SDP", 5), rep("SFG", 5))
 #run the model, save it as an object 
 #(This procedure is going to become pretty common the more modeling you do in R)
 
-mod <- aov(DV_money_spent~IV_fan_affil)
+mod <- aov(DV_money_spent ~ IV_fan_affil)
 
 
 summary(mod)
