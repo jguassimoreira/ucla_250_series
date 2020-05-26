@@ -47,15 +47,16 @@ abline(v=EQ[2], lwd=2, col="blue")
 library(sn)
 library(psych)
 
-N=20
+N=150
 skew=20                           # skewness parameters (for disctribution of X)        
 delta=skew/sqrt(skew^2+1)         # to ensure that E(X)=0 and VAR(X)=1
 omega=1/sqrt(1-2*delta^2/pi)
 kappa=-omega*sqrt(2/pi)*delta
 
+set.seed(2005)
 X = rsn(N,kappa,omega,skew)         #draw X from skew normal distribution
 
-set.seed(2011)
+
 describe(X)
 
 outcome <- matrix(0,10000,1)
