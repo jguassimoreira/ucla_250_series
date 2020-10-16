@@ -60,3 +60,11 @@ range(d$income)[1] #get lowest value, use [2] for highest value
 aggregate(d[,c("DV", "income")], by = list(d$Sex), FUN=mean) #you can use a custom function in FUN, e.g., try w popVar from above
 
 aggregate(d[,c("DV", "income")], by = list(d$Sex, d$Cond), FUN=mean)
+
+##let's Z score the variables
+d$income_z = (d$income - mean(d$income)) / sd(d$income) #Z score formula is (observation - mean) / standard-deviation
+
+#alternately, we could use the scale() function
+#scale() takes three inputs - the data (x), and then a 'center' and a 'scale' argument.
+#The former centers or de-means the data (subtracts mean from each observation), latter divides by sd (scales the data)
+d$income_z = scale(d$income, center = T, scale = T)

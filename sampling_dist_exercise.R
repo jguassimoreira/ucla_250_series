@@ -23,7 +23,7 @@ s10.400 = replicate(10, rnorm(400, 65, 5.5))
 hist(colMeans(s10.400))
 
 
-s100.400 = replicate(100, rnorm(400, 65, 5.5))
+s1000.400 = replicate(1000, rnorm(400, 65, 5.5))
 hist(colMeans(s100.400))
 
 
